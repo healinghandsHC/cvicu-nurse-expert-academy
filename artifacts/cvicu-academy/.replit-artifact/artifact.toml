@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "CVICU Nurse Expert Academy"
+description = "A comprehensive cardiovascular ICU nursing education platform that guides new nurses from foundational cardiac care through advanced critical care, with learning modules, medication and equipment references, adaptive testing, case studies, and personalized feedback."
+version = "1.0.0"
+id = "artifacts/cvicu-academy"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26175
+
+[services.development]
+run = "pnpm --filter @workspace/cvicu-academy run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cvicu-academy", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/cvicu-academy/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26175"
+BASE_PATH = "/"
