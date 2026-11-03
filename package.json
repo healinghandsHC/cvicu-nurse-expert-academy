@@ -12,8 +12,9 @@
   "dependencies": {
     "@capacitor/android": "^8.5.2",
     "@capacitor/cli": "^8.5.2",
-    "@capacitor/core": "^8.5.2",
-    "@replit/connectors-sdk": "^0.4.3"
+    "@capacitor/core": "^8.6.0",
+    "@replit/connectors-sdk": "^0.4.3",
+    "@capacitor/ios": "^8.6.0"
   },
   "devDependencies": {
     "prettier": "^3.9.6",
